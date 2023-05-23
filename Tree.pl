@@ -99,6 +99,18 @@ sub is_empty {
   return !defined $self->{root};
 }
 
+sub compare {
+  my ($current_string, $compared_string) = @_;
+
+  if($current_string lt $compared_string) {
+    return -1;
+  } elsif ($current_string gt $compared_string) {
+    return 1;
+  } esle {
+    return 0;
+  }
+}
+
 sub insert {
   my ($self, $person) = @_;
   my $new_node = Node->new($person);
@@ -106,6 +118,12 @@ sub insert {
   if($self->is_empty()) {
     $self->{root} = $new_node;
     return;
+  }
+
+  my $current = $self->{root};
+
+  while(1){
+    if ()
   }
 }
 
