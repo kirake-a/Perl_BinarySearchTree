@@ -1,9 +1,9 @@
+#!perl
+
 use strict;
- 
 use strict "vars";
 use strict "refs";
-use strict "subs";
- 
+use strict "subs"; 
 use strict;
 no strict "vars";
 
@@ -111,6 +111,11 @@ sub compare {
   }
 }
 
+my $current_1 = "Hallo";
+my $compared_1= "Hello";
+my $resultado = compare($current_1, $compared_1);
+print "Resultado: $resultado\n";
+
 sub insert {
   my ($self, $person) = @_;
   my $new_node = Node->new($person);
@@ -118,12 +123,6 @@ sub insert {
   if($self->is_empty()) {
     $self->{root} = $new_node;
     return;
-  }
-
-  my $current = $self->{root};
-
-  while(1){
-    if ()
   }
 }
 
@@ -138,7 +137,7 @@ my $person = Person->new( "Ruben", "Alvarado", "ruben_hotmail.com" );
 my $node = Node->new($person);
 my $tree = BST->new();
 $tree->method();
-$node->print_name();
+#$node->print_name();
 
 if ($tree->is_empty()) {
   print "El árbol está vacío.\n";
@@ -146,7 +145,7 @@ if ($tree->is_empty()) {
   print "El árbol no está vacío.\n";
 }
 
-$tree->insert($node);
+$tree->insert($person);
 
 if ($tree->is_empty()) {
   print "El árbol está vacío.\n";
