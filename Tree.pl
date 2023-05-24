@@ -1,11 +1,12 @@
 #!perl
-
 use strict;
 use strict "vars";
 use strict "refs";
 use strict "subs"; 
 use strict;
 no strict "vars";
+
+# ----------------------------------------------------------------------
 
 package Person;
 use strict;
@@ -23,7 +24,39 @@ sub new {
   return $self;
 }
 
+sub get_name {
+  my ($self) = @_;
+  return $self->{name};
+}
+
+sub set_name {
+  my ($self, $name_) = @_;
+  $self->{name} = $name_;
+}
+
+sub get_last_name {
+  my ($self) = @_;
+  return $self->{last_name};
+}
+
+sub set_last_name {
+  my ($self, $last_name_) = @_;
+  $self->{last_name} = $last_name_;
+}
+
+sub get_email {
+  my ($self) = @_;
+  return $self->{email};
+}
+
+sub set_email {
+  my ($self, $email_) = @_;
+  $self->{email} = $email_;
+}
+
 1;
+
+# ----------------------------------------------------------------------
 
 package Node;
 use strict;
@@ -80,6 +113,8 @@ sub print_name {
 
 1;
 
+# ----------------------------------------------------------------------
+
 package BST;
 use strict;
 use warnings;
@@ -124,13 +159,44 @@ sub insert {
     $self->{root} = $new_node;
     return;
   }
+
+  my $current = $self->{root};
+
+  while(1){
+    if (compare($current, $person) < 0) {
+      if () {
+
+      } else {
+
+      }
+
+    } else {
+      if () {
+
+      } else {
+        
+      }
+    }
+  }
 }
 
 sub method {
   print "Hello World into BST\n";
 }
 
+sub get_root {
+  my ($self) = @_;
+  return $self->{root};
+}
+
+sub set_root {
+  my ($self, $root_) = @_;
+  $self->{root} = $root_;
+}
+
 1;
+
+# ----------------------------------------------------------------------
 
 print "Hello world out package\n";
 my $person = Person->new( "Ruben", "Alvarado", "ruben_hotmail.com" );
